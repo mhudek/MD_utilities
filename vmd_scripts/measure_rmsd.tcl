@@ -1,4 +1,4 @@
-Usage: vmd -dispdev text -e measure_rmsd.tcl 
+#Usage: vmd -dispdev text -e measure_rmsd.tcl 
 
 set win 1
 set in "win$win.dcd"
