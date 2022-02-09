@@ -1,6 +1,6 @@
 #Originally from NAMD umbrella sampling tutorial
 
-Usage: vmd -dispdev text -e get-windows.tcl
+#Usage: vmd -dispdev text -e get-windows.tcl
 
 proc writeXSC { j fr } {
   #correct index number for file name
@@ -17,8 +17,8 @@ set skip 5
 
 ## load files here
 
-mol ../SMD3/cht_sc.psf
-mol ../addfile SMD3/CHT_PME_D3.dcd step $skip waitfor all
+mol new ../SMD/cht_sc.psf
+mol addfile ../SMD3/CHT_PME_D3.dcd step $skip waitfor all
 
 # select atoms for distance 
 # C4 in fragment 36
