@@ -25,3 +25,20 @@ proc rotate {in_psf in_pdb out_pfx } {
 
     mol delete top 
 }
+
+proc move_by {in_psf in_pdb out_pfx } {
+    resetpsf
+    readpsf $in_psf
+    coordpdb $in_pdb
+
+    mol load psf $in_psf pdb $in_pdb
+
+
+    set all [atomselect top all ]
+
+
+    foreach atom [$all get {segid resid name x y z}] {
+            foreach {segid resid name x y z} $atom { break }
+            coord $segid $resid $name [list $x $y [expr $z+29.0] ]
+    }
+
