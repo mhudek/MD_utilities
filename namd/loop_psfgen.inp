@@ -1,0 +1,47 @@
+#create multiple chains 
+
+topology top_all36_carb.rtf
+topology top_all36_cgenff.rtf
+topology top_chitosan.rtf
+
+segment CHT {
+pdb data.pdb
+}
+
+#chain length
+set l_chain 10
+#number of chains
+set n_chains 36
+#extra chain
+set ne 5
+
+set i 1
+set loop_l [expr {$l_chain*$n_chains}]
+#connect monomers into chains
+while {$i < $loop_l} {
+    if { $i%$l_chain == 0 } {
+        patch 14bb CHT:[expr $i-9] CHT:$i
+        incr i
+    } else {
+        patch 14bb CHT:[expr $i+1] CHT:$i
+        incr i
+    }
+}
+patch 14bb CHT:[expr $i-9] CHT:$i
+#chain on top of crystal
+
+incr i
+set k 1
+while {$k<$ne} {
+    patch 14bb CHT:[expr $i+1] CHT:$i
+    incr i
+    incr k
+}
+
+regenerate angles
+regenerate dihedrals
+
+coordpdb data.pdb CHT
+writepsf only_cht.psf
+guesscoord
+writepdb only_cht.pdb
