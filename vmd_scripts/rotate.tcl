@@ -42,3 +42,4 @@ proc move_by {in_psf in_pdb out_pfx } {
             coord $segid $resid $name [list $x $y [expr $z+29.0] ]
     }
 
+}
