@@ -56,6 +56,10 @@ xline(0.4814);
 xline(1.4366);
 
 
+%monomer6
+xline(2.2768,'b--')
+xline(2.8526,'b--')
+
 xlabel("Time(ns)");
 ylabel("Force in +z dir (pN)");
 %}
