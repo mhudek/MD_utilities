@@ -2,6 +2,10 @@ Gnuplot
 
 Note: if using on Archie, first load module gnuplot
 
+Gnuplot plotting from terminal:
+  gnuplot -p -e "plot 'filename' u 1:2"
+
+
 -Plot with pipe:
   awk '/remaining/{print $2,  $9}' D2.out | gnuplot -p -e "plot '-'" 
   (plots remaining time vs. Timestep of Namd output)  
