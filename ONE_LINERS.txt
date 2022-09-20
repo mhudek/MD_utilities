@@ -8,6 +8,10 @@ Gnuplot
   - awk emulates grep here, $2, $9 – string separated by spaces ($0 is a full string)
   - gnuplot: -p : persist, -e : execute one command in "", plot '-' : plot from pipe (works on UNIX only)
 
+Quick statistics with Gnuplot:
+  gnuplot -e "stats 'filename' u 2"
+  2 refers to column 2 of the file, use this for example to calculate average number of hydrogen bonds from hbonds.dat
+
 Head & tail
 
 Print 1st ten lines: 
