@@ -1,7 +1,8 @@
-#Usage: vmd -dispdev text -e measure_rmsd.tcl 
+#Author: Magdalena Hudek (magdalena.hudek@strath.ac.uk)
+#Usage from command line: vmd -dispdev text -e measure_rmsd.tcl 
 
 set win 1
-set in "win$win.dcd"
+set in "win$win.dcd" 
 
 ## load files here
 
