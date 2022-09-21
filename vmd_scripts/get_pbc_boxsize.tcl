@@ -1,4 +1,5 @@
-# get pbc box size from .dcd simulation
+#Author: Magdalena Hudek (magdalena.hudek@strath.ac.uk)
+# get pbc box size during simulation 
 
 proc get_box_size {} {
     set outfile1 [open "box_size.csv" w+] 
