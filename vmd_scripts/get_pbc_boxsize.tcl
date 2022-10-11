@@ -23,9 +23,9 @@ proc get_box_size {} {
         incr n
     }   
     puts $n
-    # foreach {$box} [puts $outfile1 "$box \n"]
+    foreach {$box} [puts $outfile1 "$box \n"]
     
-    #puts $outfile1 $box(2)
+    puts $outfile1 $box(2)
     close $outfile1
 }
 
