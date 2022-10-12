@@ -10,6 +10,10 @@
   ```
   gmx_mpi grompp -f minimalization.mdp -c silica.gro -p silica.top -o ed.tpr 
   ```
+5.Check energy:
+  ```
+  gmx_mpi energy -f em.edr -o potential.xvg
+  ```
 6. Create index file
   ```
   gmx_mpi make_ndx
