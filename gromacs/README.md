@@ -1,4 +1,4 @@
-#Gromacs simulation steps
+# Gromacs simulation steps
 
 
 Edit box size
