@@ -1,7 +1,7 @@
 # Gromacs simulation steps
 
 1. Create .pdb/.psf files with Charmm-gui and NAMD/psfgen
-2. Convert to .gro/.top files using parmed
+2. Convert to .gro/.top files using namd2gro.py
 3. Edit box size
   ```
   gmx_mpi editconf -f input.gro -o output.gro -c -d 0.0 -bt triclinic
