@@ -1,4 +1,5 @@
 # Useful one-line commands for bash
+*Author: Magdalena Hudek*
 
 ## Gnuplot
 
