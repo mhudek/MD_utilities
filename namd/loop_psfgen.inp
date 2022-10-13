@@ -1,5 +1,7 @@
-#create multiple chains 
+# Apply correct bonds to create crystal bonded accross PBC
+# Author: Magdalena Hudek
 
+# Topology files
 topology top_all36_carb.rtf
 topology top_all36_cgenff.rtf
 topology top_chitosan.rtf
@@ -17,7 +19,8 @@ set ne 5
 
 set i 1
 set loop_l [expr {$l_chain*$n_chains}]
-#connect monomers into chains
+
+#connect monomers into chains in the crystal
 while {$i < $loop_l} {
     if { $i%$l_chain == 0 } {
         patch 14bb CHT:[expr $i-9] CHT:$i
@@ -28,8 +31,8 @@ while {$i < $loop_l} {
     }
 }
 patch 14bb CHT:[expr $i-9] CHT:$i
-#chain on top of crystal
 
+#chain on top of crystal
 incr i
 set k 1
 while {$k<$ne} {
@@ -38,6 +41,7 @@ while {$k<$ne} {
     incr k
 }
 
+#very importaint to include regenerate commands for patches being applied correctly
 regenerate angles
 regenerate dihedrals
 
