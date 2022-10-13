@@ -1,6 +1,7 @@
 #!/bin/bash
 # extract energies from NAMD log file and prepare for plotting
-#Usage: bash namd_energy.sh in_file out_file
+# Usage: bash namd_energy.sh in_file out_file
+# Author: Magdalena Hudek
 
 in_file=$1
 out_file=$2
