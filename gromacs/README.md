@@ -27,7 +27,7 @@
   ```
 6. Minimalization
   ```
-  gmx_mpi grompp -f em.mdp -c silica.gro -p silica.top -o ed.tpr 
+  gmx_mpi grompp -f em.mdp -c silica.gro -p silica.top -o em.tpr 
   ```
 7. Check energy:
   ```
