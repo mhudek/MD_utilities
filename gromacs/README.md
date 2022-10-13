@@ -6,20 +6,37 @@
 3. Edit box size
   ```
   gmx_mpi editconf -f input.gro -o output.gro -c -d 0.0 -bt triclinic
-   ```
-4. Minimalization
+  ```
+4. Create index file
+  ```
+  gmx_mpi make_ndx -f input.gro -o index.ndx
+  ```
+5. Create restraints
+  ```
+  gmx_mpi genrestr -f silica.gro -n index.ndx -o posre.itp
+  ```
+   
+ _Add restraints to the .top file (under appropriate molecule)_
+  
+  ```
+  ; Include Position restraint file
+  #ifdef POSRES
+  #include "posre.itp"
+  #endif
+  ```
+6. Minimalization
   ```
   gmx_mpi grompp -f minimalization.mdp -c silica.gro -p silica.top -o ed.tpr 
   ```
-5.Check energy:
+7. Check energy:
   ```
   gmx_mpi energy -f em.edr -o potential.xvg
   ```
-6. Create index file
+8. First NPT (semi-isotropic pressure) 
   ```
-  gmx_mpi make_ndx
+  gmx_mpi grompp -f npt.mdp -c em.gro -r em.gro -p silica.top -o npt.tpr -n index.ndx
   ```
-7. First NPT (semi-isotropic pressure) 
+9. First MD run with correct thermostat
   ```
-  gmx_mpi grompp -f nvt.mdp -c em.gro -r em.gro -p silica.top -o nvt.tpr -n index.ndx
+  gmx_mpi grompp -f md.mdp -c npt.gro -r npt.gro -p silica.top -o md.tpr -n index.ndx
   ```
