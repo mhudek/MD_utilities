@@ -1,3 +1,6 @@
+# Calculate the sum of the charges in the system 
+# Author: Magdalena Hudek
+
 set out [open "charge_sum.dat" w]
 
 proc sum_c {sel} {
