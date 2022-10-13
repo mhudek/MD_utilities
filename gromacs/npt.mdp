@@ -1,0 +1,59 @@
+;Initial MD equilibration run - NPT
+;It might be good idea to use NVT first, but NPT avoids vacuum bubble formation with slab/memberane
+
+define                  = -DPOSRES  ; position restraint for non-solvent
+
+; Run parameters
+integrator              = md        ; leap-frog integrator
+nsteps                  = 100000    ; 1 * 100000 = 100 ps
+dt                      = 0.001     ; 1 fs
+
+; Output control
+nstxout                 = 500       ; save coordinates
+nstvout                 = 500       ; save velocities
+nstenergy               = 500       ; save energies
+nstlog                  = 500       ; update log file
+
+; Bond parameters
+continuation            = no        ; first dynamics run
+constraint_algorithm    = lincs     ; holonomic constraints
+constraints             = h-bonds   ; bonds involving H are constrained
+lincs_iter              = 2         ; accuracy of LINCS, 1 for normal md, 2 for minim
+lincs_order             = 8         ; also related to accuracy, 4 for normal md, 8 for minim
+
+; Nonbonded settings
+cutoff-scheme           = Verlet    ; Buffered neighbor searching
+rlist                   = 1.2
+nstlist                 = 20        ; 10 fs, largely irrelevant with Verlet
+rcoulomb                = 1.2       ; short-range electrostatic cutoff (in nm)
+rvdw                    = 1.2       ; short-range van der Waals cutoff (in nm)
+DispCorr                = no        ; account for cut-off vdW scheme
+
+; Electrostatics
+coulombtype             = PME       ; Particle Mesh Ewald for long-range electrostatics
+pme_order               = 4         ; cubic interpolation
+fourierspacing          = 0.16      ; grid spacing for FFT
+
+; Temperature coupling is on
+tcoupl                  =  berendsen      ; berendsen should be used only for initial equilibration
+tc-grps                 =  CR20- !CR20-
+tau_t                   =  0.1 0.1        ; time constant, in ps
+ref_t                   =  300 300        ; reference temperature, one for each group, in K
+
+; Pressure coupling is on
+pcoupl                  = Berendsen        ; Pressure coupling on in NPT - berendesen only for intinial pressure coupling
+pcoupltype              = semiisotropic    ; semiisotropic to avoid vacuum bubble formation (with slab/membrane)
+tau_p                   = 1.0              ; time constant, in ps
+ref_p                   = 1.0 1.0          ; reference pressure, in bar
+compressibility         = 4.5e-5 4.5e-5    ; isothermal compressibility of water, bar^-1
+refcoord_scaling        = com
+
+
+; Periodic boundary conditions
+pbc                     = xyz              ; 3-D PBC
+periodic-molecules      = yes              ; molecule bonded accross PBC 
+
+; Velocity generation
+gen_vel                 = yes       ; assign velocities from Maxwell distribution
+gen_temp                = 300       ; temperature for Maxwell distribution
+gen_seed                = -1        ; generate a random seed
