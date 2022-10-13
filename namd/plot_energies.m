@@ -1,7 +1,9 @@
+% Matlab code for plotting NAMD energies obtained from energy.sh bash script
+% Author: Magdalena Hudek
+
 clear all;
 
 filename1 = "./eng0.txt";
-
 
 data = readmatrix(filename1,'Delimiter','   ');
 %data2 = readmatrix(filename2,'Delimiter',',');
