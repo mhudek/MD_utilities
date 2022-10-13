@@ -2,7 +2,8 @@
 *This is specific to my system ... adjust appropriately*
 
 1. Create .pdb/.psf files with Charmm-gui and NAMD/psfgen
-2. Convert to .gro/.top files using namd2gro.py
+2. Convert to .gro/.top files using namd2gro.py 
+    *(Note: need [ParmEd](https://github.com/ParmEd/ParmEd) for that)*
 3. Edit box size
   ```
   gmx_mpi editconf -f input.gro -o output.gro -c -d 0.0 -bt triclinic
