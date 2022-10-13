@@ -1,4 +1,5 @@
 # Gromacs simulation steps
+*This is specific to my system ... adjust appropriately*
 
 1. Create .pdb/.psf files with Charmm-gui and NAMD/psfgen
 2. Convert to .gro/.top files using namd2gro.py
