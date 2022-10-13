@@ -1,5 +1,10 @@
 #!/bin/bash
 # extract energies from NAMD log file and prepare for plotting
+# Author: Magdalena Hudek
+# Usage: bash namd_energy2.sh input output
+# Warning 1: If used on AlmaOS (e.g. Archie) load Gnuplot first with:
+# module load gnuplot
+# Warning 2: change of gnuplot terminal might be required depending on available terminals
 
 in_file=$1
 out_file=$2
