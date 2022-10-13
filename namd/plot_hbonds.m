@@ -1,8 +1,8 @@
+%Plot h-bonds obtained from VMD's hbonds plugin
+
 clear all;
 
 filename1 = "./hbonds.dat";
-
-
 data = readmatrix(filename1);
 
 ts=data(:,1);
