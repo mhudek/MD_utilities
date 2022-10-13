@@ -1,0 +1,28 @@
+;em.mdp - used as input into grompp to generate em.tpr
+;Parameters describing what to do, when to stop and what to save
+
+integrator  = steep        ; Algorithm (steep = steepest descent minimization) - for energy minimalization
+emtol       = 200.0        ; Stop minimization when the maximum force < 200.0 kJ/mol/nm
+emstep      = 0.01         ; Minimization step size
+nsteps      = 50000        ; Maximum number of (minimization) steps to perform
+nstenergy   = 100          ;energy output freq
+
+; Bond parameters
+
+constraint_algorithm    = lincs     ; holonomic constraints
+constraints             = h-bonds   ; bonds involving H are constrained
+lincs_iter              = 2         ; accuracy of LINCS, 1 for normal md, 2 for minim
+lincs_order             = 8         ; also related to accuracy, 4 for normal md, 8 for minim
+
+; Parameters describing how to find the neighbors of each atom and how to calculate the interactions
+nstlist         = 1         ; Frequency to update the neighbor list and long range forces
+cutoff-scheme   = Verlet    ; Buffered neighbor searching
+rlist           = 1.2
+coulombtype     = PME       ; Treatment of long range electrostatic interactions
+rcoulomb        = 1.2       ; Short-range electrostatic cut-off
+vdwtype         = Cut-off
+rvdw            = 1.2       ; Short-range Van der Waals cut-off
+
+fourierspacing     = 0.15
+pbc                = xyz    ; Periodic Boundary Conditions in all 3 dimensions
+periodic-molecules = yes    ; molecule bonded across PBC
