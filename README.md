@@ -11,4 +11,7 @@ Collection of one-line bash commands that might come in handy is available [here
 Files were orginally obtained from NAMD umbrella sampling tutorial
 
 ## List of resources for MD
-- 
+- [CHARMM-GUI](https://charmm-gui.org/) - create inputs for NAMD, LAMMPS, GROMACS
+- [PyMOL](https://github.com/schrodinger/pymol-open-source) - VMD alternative for visualisation and post-precessing; open-source and educational versions are free
+- [Ovito](https://www.ovito.org/) - nice for visualisation for LAMMPS; free version limited for post-processing
+- [MDAnalysis](https://www.mdanalysis.org/) - Python MD pre- & post-processing library  
