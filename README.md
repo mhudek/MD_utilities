@@ -9,3 +9,6 @@ Collection of one-line bash commands that might come in handy is available [here
 
 ### Umbrella_sampling
 Files were orginally obtained from NAMD umbrella sampling tutorial
+
+## List of resources for MD
+- 
