@@ -6,9 +6,6 @@
 set input "cht_sc"
 set output "cht6"
 
-mol new ${input}.psf
-mol addfile ${input}.pdb
-
 readpsf ${input}.psf
 coordpdb ${input}.pdb
 
@@ -17,3 +14,5 @@ set sel [atomselect top "fragment 36 and segname CHT"]
 
 $sel writepsf $output.psf
 $sel writepdb $output.pdb
+
+quit
