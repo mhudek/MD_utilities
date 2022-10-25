@@ -27,7 +27,7 @@
   ```
 6. Minimalization
   ```
-  gmx_mpi grompp -f em.mdp -c silica.gro -p silica.top -o em.tpr 
+  gmx_mpi grompp -f em.mdp -c silica.gro -p topol.top -o em.tpr 
   ```
 7. Check energy:
   ```
@@ -35,9 +35,9 @@
   ```
 8. First NPT (semi-isotropic pressure) 
   ```
-  gmx_mpi grompp -f npt.mdp -c em.gro -r em.gro -p silica.top -o npt.tpr -n index.ndx
+  gmx_mpi grompp -f npt.mdp -c em.gro -r em.gro -p topol.top -o npt.tpr -n index.ndx
   ```
 9. First MD run with correct thermostat
   ```
-  gmx_mpi grompp -f md.mdp -c npt.gro -r npt.gro -p silica.top -o md.tpr -n index.ndx
+  gmx_mpi grompp -f md.mdp -c npt.gro -r npt.gro -p topol.top -o md.tpr -n index.ndx
   ```
