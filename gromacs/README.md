@@ -41,3 +41,13 @@
   ```
   gmx_mpi grompp -f md.mdp -c npt.gro -r npt.gro -p topol.top -o md.tpr -n index.ndx
   ```
+10. Extending simulation (time in ps)
+   ```
+   gmx_mpi convert-tpr -s md.tpr -until 10000 -o md2.tpr
+
+   ```
+   Run command in slurm script...
+   ```
+   gmx mdrun -s md2.tpr -cpi md.cpt -deffnm md
+
+   ```
