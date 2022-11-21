@@ -4,7 +4,7 @@
 1. Create .pdb/.psf files with Charmm-gui and NAMD/psfgen
 2. Convert to .gro/.top files using namd2gro.py 
     *(Note: need [ParmEd](https://github.com/ParmEd/ParmEd) for that)*
-3. Edit box size
+3. Edit box size (very important step!)
   ```
   gmx_mpi editconf -f input.gro -o output.gro -c -d 0.0 -bt triclinic
   ```
@@ -12,7 +12,7 @@
   ```
   gmx_mpi make_ndx -f input.gro -o index.ndx
   ```
-5. Create restraints
+5. Create restraints - works only for the first molecule in the .gro file
   ```
   gmx_mpi genrestr -f silica.gro -n index.ndx -o posre.itp
   ```
@@ -35,7 +35,7 @@
   ```
 8. First NPT (semi-isotropic pressure) 
   ```
-  gmx_mpi grompp -f npt.mdp -c em.gro -r em.gro -p topol.top -o npt.tpr -n index.ndx
+  gmx_mpi grompp -f npt.mdp -c em.gro -r em.gro -p topol.top -o npt.tpr -n index.ndx -maxwarm -2
   ```
 9. First MD run with correct thermostat
   ```
