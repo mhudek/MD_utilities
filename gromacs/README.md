@@ -33,7 +33,8 @@
   ```
   gmx_mpi energy -f em.edr -o potential.xvg
   ```
-8. First NPT (semi-isotropic pressure) 
+8. First NPT (anisotropic pressure - for simulations without surface use isotropic)
+   _Max warning 2 is used because of berendsen thermostat & barostat_
   ```
   gmx_mpi grompp -f npt.mdp -c em.gro -r em.gro -p topol.top -o npt.tpr -n index.ndx -maxwarm -2
   ```
