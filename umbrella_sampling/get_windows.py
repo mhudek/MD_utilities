@@ -21,6 +21,7 @@ try:
     import numpy as np
 except:
     print("Numpy not found. Exiting.")
+    sys.exit(1)
 
 import warnings
 warnings.filterwarnings("ignore", category=DeprecationWarning) 
