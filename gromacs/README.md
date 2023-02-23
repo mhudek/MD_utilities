@@ -12,7 +12,7 @@
   ```
   gmx_mpi make_ndx -f input.gro -o index.ndx
   ```
-5. Create restraints - works only for the first molecule in the .gro file
+5. Create restraints - use genrestr (works only for the first molecule in the .gro file) or use [make_posre.py](./make_posre.py) script.
   ```
   gmx_mpi genrestr -f silica.gro -n index.ndx -o posre.itp
   ```
