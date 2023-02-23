@@ -55,7 +55,7 @@ except:
 
 
 out.write(";Position restraints file for GROMACS \n")
-out.write("[ position_restraint ] \n")
+out.write("[ position_restraints ] \n")
 out.write(";   i funct   fx              fy              fz \n")
 
 for k in range(N):
