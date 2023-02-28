@@ -1,6 +1,6 @@
 # Umbrella sampling procedure for Gromacs
 1. SMD 
-2. Obtain coordinate files (.gro) from SMD
+2. Obtain coordinate files (.gro) from SMD using [get_windows.py](get_windows.py) 
 3. Prepare input files
 4. Copy files into single folder and prepare wham files
 5. Run wham
