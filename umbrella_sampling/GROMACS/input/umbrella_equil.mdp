@@ -1,0 +1,69 @@
+;define                  = -DPOSRES -DPOSRES_CHT
+;
+integrator              = md
+dt                      = 0.002
+nsteps                  = 500000 ;1 ns
+;
+nstxtcout               = 500
+nstvout                 = 5000
+nstfout                 = 5000
+nstcalcenergy           = 100
+nstenergy               = 1000
+nstlog                  = 1000
+;
+cutoff-scheme           = Verlet
+nstlist                 = 20
+rlist                   = 1.2
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+coulombtype             = PME
+rcoulomb                = 1.2
+;
+tcoupl                  = Nose-Hoover
+tc_grps                 = NANO SOLV
+tau_t                   = 1.0 1.0
+ref_t                   = 300 300
+;
+;Pressure coupling is on
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = anisotropic    ; semiisotropic to avoid vacuum bubble formation (with slab/membrane)
+tau_p                   = 2.0            ; time constant, in ps
+ref_p                   = 1.0 1.0 1.0 0 0 0         ; reference pressure, in bar
+compressibility         = 2.5E-6 2.5E-6 4.5e-5 0 0 0    ; isothermal compressibility of water, bar^-1
+refcoord_scaling        = com
+;
+;
+;
+continuation            = no        ; first dynamics run
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+lincs_iter              = 1         ; accuracy of LINCS, 1 for normal md, 2 for minim
+lincs_order             = 4         ; also related to accuracy, 4 for normal md, 8 for minim
+;
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = NANO SOLV
+;
+gen-vel                 = yes
+gen-temp                = 300
+gen-seed                = -1
+;
+pbc 			= xyz
+periodic-molecules      = yes
+;
+pull                     = yes
+pull-ngroups             = 2      ;two groups defining one reaction coordinate
+pull-ncoords             = 1      ;number of reaction coordinates
+;
+pull-group1-name         = groupA
+pull-group2-name         = groupB
+pull-coord1-type         = umbrella
+pull-coord1-geometry     = distance
+pull-coord1-groups       = 1 2     ; groups 1 (Chain A) and group 2 (chain B) define rection coordianate
+pull-coord1-dim          = N N Y   ; pull along z
+pull-coord1-start        = yes     ; define initial COM distance > 0
+pull-coord1-k            = 2100    ; kJ/mol/nm^2 (eqiv 5 kcal/mol/A^2)
+pull-coord1-rate         = 0.0     ; nm/ps - no pulling for US
+                                             
