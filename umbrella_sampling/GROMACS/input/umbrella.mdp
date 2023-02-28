@@ -1,0 +1,57 @@
+;define                  = -DPOSRES
+
+integrator              = md
+dt                      = 0.002
+nsteps                  = 10000000
+nstxtcout               = 1000
+nstvout                 = 50000
+nstfout                 = 50000
+nstcalcenergy           = 100
+nstenergy               = 1000
+nstlog                  = 1000
+;
+cutoff-scheme           = Verlet
+nstlist                 = 20
+vdwtype                 = Cut-off
+vdw-modifier            = Force-switch
+rvdw_switch             = 1.0
+rvdw                    = 1.2
+rcoulomb                = 1.2
+rlist                   = 1.2
+coulombtype             = PME
+;
+tcoupl                  = Nose-Hoover
+tc_grps                 = NANO SOLV
+tau_t                   = 1.0 1.0
+ref_t                   = 300 300
+;
+pcoupl                  = Parrinello-Rahman
+pcoupltype              = anisotropic
+tau_p                   = 2.0
+compressibility         = 2.5E-6 2.5E-6 4.5e-5 0.0 0.0 0.0
+ref_p                   = 1.0 1.0 1.0 0 0 0
+refcoord_scaling        = com
+;
+constraints             = h-bonds
+constraint_algorithm    = LINCS
+continuation            = yes
+;
+nstcomm                 = 100
+comm_mode               = linear
+comm_grps               = NANO SOLV
+;
+periodic-molecules      = yes
+;
+pull                     = yes
+pull-ngroups             = 2      ;two groups defining one reaction coordinate
+pull-ncoords             = 1      ;number of reaction coordinates
+
+pull-group1-name         = groupA
+pull-group2-name	 = groupB
+pull-coord1-type         = umbrella
+pull-coord1-geometry     = distance
+pull-coord1-groups       = 1 2     ; groups 1 (Chain A) and group 2 (chain B) define rection coordianate
+pull-coord1-dim          = N N Y   ; pull along z
+pull-coord1-start        = yes     ; define initial COM distance > 0
+pull-coord1-k            = 2100    ; kJ/mol/nm^2 (eqiv 5 kcal/mol/A^2)
+pull-coord1-rate         = 0.0     ; nm/ps - no pulling for US
