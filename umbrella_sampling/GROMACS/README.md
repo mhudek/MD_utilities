@@ -5,7 +5,7 @@
 4. Copy resultd into single directory and prepare wham files using [create_wham_files.sh](create_wham_files.sh)
 5. Run wham
    ```
-   gmx_mpi wham -it tpr-files.dat -ix pullx-files.dat -o -hist -unit kCal
+   gmx_mpi wham -it tpr-files.dat -ix pullx-files.dat -o -hist -unit kCal -temp 300
    ```
 6. Check histograms for overlap
    ```
