@@ -16,6 +16,7 @@ Files were orginally obtained from NAMD umbrella sampling tutorial
 - [Ovito](https://www.ovito.org/) - nice for visualisation for LAMMPS; free version limited for post-processing
 - [MDAnalysis](https://www.mdanalysis.org/) - Python MD pre- & post-processing library  
 - [SwissParam](https://swissparam.ch/) - CHARMM ff small molecule parametrisation
+- [Tupa](https://mdpoleto.github.io/tupa/) - visualise electric field in PyMol
 
 ## General software/code resources
 - [Software carpentry](https://software-carpentry.org/lessons/) - free lessons in bash, python, R ...
