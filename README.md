@@ -17,6 +17,7 @@ Files were orginally obtained from NAMD umbrella sampling tutorial
 - [MDAnalysis](https://www.mdanalysis.org/) - Python MD pre- & post-processing library  
 - [SwissParam](https://swissparam.ch/) - CHARMM ff small molecule parametrisation
 - [Tupa](https://mdpoleto.github.io/tupa/) - visualise electric field in PyMol
+- [Calculate entropy](https://codeentropy.readthedocs.io/en/latest/index.html)
 
 ## General software/code resources
 - [Software carpentry](https://software-carpentry.org/lessons/) - free lessons in bash, python, R ...
