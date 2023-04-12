@@ -8,7 +8,7 @@
 Collection of one-line bash commands that might come in handy is available [here](ONE_LINERS.md).
 
 ### Umbrella_sampling
-Files were orginally obtained from NAMD umbrella sampling tutorial
+Files were originally obtained from NAMD umbrella sampling tutorial
 
 ## List of resources for MD
 - [CHARMM-GUI](https://charmm-gui.org/) - create inputs for NAMD, LAMMPS, GROMACS
