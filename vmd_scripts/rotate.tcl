@@ -41,5 +41,10 @@ proc move_by {in_psf in_pdb out_pfx } {
             foreach {segid resid name x y z} $atom { break }
             coord $segid $resid $name [list $x $y [expr $z+29.0] ]
     }
+    
+    writepsf $out_pfx.psf
+    writepdb $out_pfx.pdb
+
+    mol delete top 
 
 }
