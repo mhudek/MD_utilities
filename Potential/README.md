@@ -33,13 +33,13 @@ Boltzman
 Fundementals of Interface and Colloid Science, Volume II: Solid-Liquid Interfaces, J Lykema
 
 Normalised dimensionless potential:
-$$y(x)=F\psi(x)/RT$$
+$$y(x)= \frac{F}{RT} \psi(x)$$
 Reciprocal Debye lenght $\kappa$
-$$\kappa^2=F^2\Sigma_j c_j z_j^2 /\varepsilon_0 \varepsilon R T$$
+$$\kappa^2=\frac{F^2\Sigma_j c_j z_j^2}{\varepsilon_0 \varepsilon R T}$$
 From Possion equation:
 $$y^d=\frac{2}{z}ln[-p\sigma^d + \sqrt{(p\sigma^d)^2+1}]$$
-where $\sigma^d$ is surface charge (C/m^2), and $p=(8\varepsilon_0\varepsilon c R T)$
+where $\sigma^d$ is surface charge (C/m^2), and $p=8\varepsilon_0\varepsilon c R T$
 Potential distribution obtained analytically:
-$$tanh(zy(x)/4)=[tanh(zy^d/4)] e^{-\kappa x}$$
+$$tanh(\frac{zy(x)}{4})=[tanh(\frac{zy^d}{4})] e^{-\kappa x}$$
 For low potentials and z=1 ...
 $$\psi(x)=\psi^d e^{-\kappa x}$$
