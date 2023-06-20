@@ -2,7 +2,10 @@
 
 Guoy-Chapman theory
 
-Poisson equation:
+Electric double layer (EDL) is a well-known phenomenon occurring at the interface of a charged surface with a liquid containing ions. The ions form a layer at the surface of the charged surface to screen the charges.
+
+The electric potential of the EDL can be obtained by integrating the Poisson-Boltzman equation. One dimensional PB equation is given by: 
+
 $$\nabla^2 \psi(z)=\frac{d^2 \psi(z)}{dz^2}=-\frac{\rho(z)}{\varepsilon_0}$$
 where $\varepsilon_0=8.85\times10^{-12} ~ C ~ V^{-1} ~ m^{-1}$
 $$\rho(z)=F\sum_j ~ z_j c_j(x)$$
