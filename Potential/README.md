@@ -9,7 +9,8 @@ The electric potential of the EDL can be obtained by integrating the Poisson-Bol
 $$\nabla^2 \psi(z)=\frac{d^2 \psi(z)}{dz^2}=-\frac{\rho(z)}{\varepsilon_0}$$
 where $\varepsilon_0=8.85\times10^{-12} ~ C ~ V^{-1} ~ m^{-1}$
 $$\rho(z)=F\sum_j ~ z_j c_j(x)$$
-$\rho$ is charge density
+
+where $\psi$ is the electric potential is the function of distance, z. $\rho$ is the volumetric charge density function.
 
 https://doi.org/10.1063/1.3148885
 
