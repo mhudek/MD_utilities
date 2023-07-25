@@ -8,8 +8,17 @@
 Collection of one-line bash commands that might come in handy is available [here](ONE_LINERS.md).
 
 ### Umbrella_sampling
+
 Files were originally obtained from NAMD umbrella sampling tutorial
 
+Indexing accross diffent codes:
+
+| Software   | starts at 0 | starts at 1 | 
+| ---------- | ---------- | ----------- | 
+| VMD        | index      | serial      |
+| MDAnalysis | index      | id          |
+| Gromacs    |            | .ndx files  |
+ 
 ## List of resources for MD
 - [CHARMM-GUI](https://charmm-gui.org/) - create inputs for NAMD, LAMMPS, GROMACS
 - [PyMOL](https://github.com/schrodinger/pymol-open-source) - VMD alternative for visualisation and post-precessing; open-source and educational versions are free
