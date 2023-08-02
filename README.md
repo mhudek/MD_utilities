@@ -27,6 +27,7 @@ Indexing accross diffent codes:
 - [SwissParam](https://swissparam.ch/) - CHARMM ff small molecule parametrisation
 - [Tupa](https://mdpoleto.github.io/tupa/) - visualise electric field in PyMol
 - [Calculate entropy](https://codeentropy.readthedocs.io/en/latest/index.html)
+- [FixBox](https://pubs.acs.org/doi/10.1021/acs.jcim.2c00823) - To fix broken PBCs (.gro format)
 
 ## General software/code resources
 - [Software carpentry](https://software-carpentry.org/lessons/) - free lessons in bash, python, R ...
