@@ -13,3 +13,6 @@
    xmgrace -nxy histo.xvg
    ```
 8. Check Free energy profile  
+
+Notes:
+- gmx wham sets value of the first point to zero. This can be adjusted using `-zprof0` option
