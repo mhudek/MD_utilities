@@ -24,6 +24,7 @@ $$\psi_s(z)=\psi_{cl}(z)-\Delta(z)$$
 $$\Delta(z)=\frac{z}{L}\psi_{cl}(L)$$
 
 Both soultions should give same result for symmetrical membranes and materials centered at 0, provided good enough sampling and $\pm$ some constant C 
+
 Do not use PBC solution for asymetrical membranes
 
 Another relevant paper: https://doi.org/10.1039/C8NR00776D 
