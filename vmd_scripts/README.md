@@ -18,5 +18,13 @@ Futher details can be found in [VMD manual](http://www.csb.yale.edu/userguides/g
   mol addrep top
   ```
 
-  
+### Merge molecules into a single new molecule
+
+Uses topotools
+```
+set mol [::TopoTools::mergemols {0 1}]
+
+animate write psf adenine.merged.psf $mol
+animate write pdb adenine.merged.pdb $mol
+```
   
