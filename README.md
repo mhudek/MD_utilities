@@ -11,13 +11,17 @@ Collection of one-line bash commands that might come in handy is available [here
 
 Files were originally obtained from NAMD umbrella sampling tutorial
 
-Indexing accross diffent codes:
+##Indexing accross different codes:
 
 | Software   | starts at 0 | starts at 1 | 
 | ---------- | ---------- | ----------- | 
 | VMD        | index      | serial      |
 | MDAnalysis | index      | id          |
 | Gromacs    |            | .ndx files  |
+
+## Charmm-GUI tips
+- add `EXT XPLOR` to first line of psf file
+- water segments should be called `TIP3`
  
 ## List of resources for MD
 - [CHARMM-GUI](https://charmm-gui.org/) - create inputs for NAMD, LAMMPS, GROMACS
