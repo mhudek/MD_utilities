@@ -29,6 +29,9 @@
   ```
   gmx_mpi grompp -f em.mdp -c silica.gro -p topol.top -o em.tpr 
   ```
+  ```
+  gmx mdrun -deffnm em
+  ```
 7. Check energy:
   ```
   gmx_mpi energy -f em.edr -o potential.xvg
@@ -38,17 +41,19 @@
   ```
   gmx_mpi grompp -f npt.mdp -c em.gro -r em.gro -p topol.top -o npt.tpr -n index.ndx -maxwarm -2
   ```
+  ```
+  gmx mdrun -deffnm npt
+  ```
 9. First MD run with correct thermostat
   ```
   gmx_mpi grompp -f md.mdp -c npt.gro -r npt.gro -p topol.top -o md.tpr -n index.ndx
   ```
+  ```
+  gmx mdrun -deffnm em
+  ```
 10. Extending simulation (time in ps)
-   ```
-   gmx_mpi convert-tpr -s md.tpr -until 10000 -o md2.tpr
-
-   ```
-   Run command in slurm script...
-   ```
-   gmx mdrun -s md2.tpr -cpi md.cpt -deffnm md
-
-   ```
+  ```
+  gmx convert-tpr -s md.tpr -until 500000 -o md2.tpr
+  gmx mdrun -s md2.tpr -cpi md.cpt -deffnm md2 -noappend
+  ```
+  _note: number is the total time (including previous runs) in ps_  
