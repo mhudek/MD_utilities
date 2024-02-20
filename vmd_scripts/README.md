@@ -24,7 +24,7 @@ Uses topotools
 ```
 set mol [::TopoTools::mergemols {0 1}]
 
-animate write psf adenine.merged.psf $mol
-animate write pdb adenine.merged.pdb $mol
+animate write psf merged.psf $mol
+animate write pdb merged.pdb $mol
 ```
   
