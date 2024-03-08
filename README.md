@@ -11,7 +11,7 @@ Collection of one-line bash commands that might come in handy is available [here
 
 Files were originally obtained from NAMD umbrella sampling tutorial
 
-##Indexing accross different codes:
+## Indexing accross different codes:
 
 | Software   | starts at 0 | starts at 1 | 
 | ---------- | ---------- | ----------- | 
