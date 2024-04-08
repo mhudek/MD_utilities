@@ -27,4 +27,10 @@ set mol [::TopoTools::mergemols {0 1}]
 animate write psf merged.psf $mol
 animate write pdb merged.pdb $mol
 ```
-  
+
+create selection into molecule  
+```
+set mol [::TopoTools::selections2mol $sellist]
+animate write psf combinedsel.psf $mol
+animate write pdb combinedsel.pdb $mol
+```
