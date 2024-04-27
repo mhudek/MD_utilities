@@ -8,7 +8,7 @@
    sudo apt-get update
    sudo apt-get upgrade
    ```
-3. Fresh Ubuntu installation comes very bare, so we neet to install all the essentials (such as a compiler) first
+3. Fresh Ubuntu installation comes very bare, so we need to install all the essentials (such as a compiler) first
    ```
    sudo apt-get install build-essential
    sudo apt-get install cmake
@@ -26,11 +26,11 @@
 6. Add this stage we need to enable the additional packages
    ```
    cmake -C ../cmake/presets/most.cmake ../cmake  # enable most packages
-   cmake -D PKG_MC=on .                           # enable MC package, same format for other packaged
+   cmake -D PKG_MC=on .                           # enable MC package, same format for other packages
    ```
 7. Time to compile, this is best done in parallel using -j flag, to find out how many cores you have run `lscpu` command
    ```
-   make - j N  #N is the number of cores to comiple with
+   make - j N  #N is the number of cores to compile with
    ```
 8. Optional, copy compiled files into installation location
    ```
