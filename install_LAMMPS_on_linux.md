@@ -37,7 +37,7 @@
    make install   
    ```
    The location of the installation tree defaults to `${HOME}/.local.`
-9. We're done :) Enjoy using lammps!
+9. We're done :) Have fun using lammps!
    ```
    .\lmp
    ```  
