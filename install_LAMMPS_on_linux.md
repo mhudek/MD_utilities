@@ -31,8 +31,9 @@
    ```
    make - j N  #N is the number of cores to comiple with
    ```
-8. ```
-   make install    # optional, copy compiled files into installation location
+8. optional, copy compiled files into installation location
+   ```
+   make install   
    ```
    The location of the installation tree defaults to `${HOME}/.local.`
    
