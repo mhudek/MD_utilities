@@ -8,16 +8,17 @@
    sudo apt-get update
    sudo apt-get upgrade
    ```
-3. For the fresh Ubuntu installs
+3. Fresh Ubuntu installation comes very bare, so we neet to install all the essentials (such as a compiler) first
    ```
    sudo apt-get install build-essential
    sudo apt-get install cmake
    ```
-4. Extract Lammps directory
+4. Now we can start with lammps ... First extract Lammps directory
    ```
    tar -xvf lammps.tgz
    ```
-5. ```
+5. Next we create a directory for our build. 
+   ```
    cd lammps
    mkdir build
    cd build
@@ -31,9 +32,12 @@
    ```
    make - j N  #N is the number of cores to comiple with
    ```
-8. optional, copy compiled files into installation location
+8. Optional, copy compiled files into installation location
    ```
    make install   
    ```
    The location of the installation tree defaults to `${HOME}/.local.`
-   
+9. We're done :) Enjoy using lammps!
+   ```
+   .\lmp
+   ```  
