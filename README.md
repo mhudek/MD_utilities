@@ -35,3 +35,4 @@ Files were originally obtained from NAMD umbrella sampling tutorial
 
 ## General software/code resources
 - [Software carpentry](https://software-carpentry.org/lessons/) - free lessons in bash, python, R ...
+- [https://mejk.github.io/moldy/intro.html] - Mikko Karttunen's MD lecture notes (very well written)
