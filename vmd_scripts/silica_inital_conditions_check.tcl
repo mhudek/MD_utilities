@@ -27,6 +27,7 @@ set chtp [atomselect top "resname SDP"]
 set chtn [atomselect top "resname SDN"]
 set ace [atomselect top "resname BGL"]
 set all [atomselect top "all"]
+set water [atomselect top "water"]
 
 set all_n [$all num]
 set sod_n [$sod num]
@@ -35,6 +36,7 @@ set silica_n [$silica num]
 set chtp_n [$chtp num]
 set chtn_n [$chtn num]
 set ace_n [$ace num]
+set water_n [$water num]
 
 #number of monomers for chitosan
 set pn 22
@@ -98,6 +100,7 @@ puts $out "This file was generated from .gro (or pdb) and .psf files using TCL s
 puts $out ""
 puts $out "System name: "
 puts $out "Total number of atoms: $all_n "
+puts $out "Number of water molecules: $water_n"
 puts $out "Number of silica atoms: $silica_n"
 puts $out "Total number of chitin/chitosan atoms: [expr $chtp_n+$chtn_n+$ace_n]"
 puts $out "Number of sodium ions: $sod_n"
