@@ -24,7 +24,8 @@ set memb_sel "segname MEMB"
 
 proc align { sel {refframe 0} } {
 
-  #set over estimate of membrane thickness, used to detect if membrane is split only
+  #set over estimate of membrane thickness
+  #used to detect if membrane is split only
   set memb_thickness 75
   #string selection for lower and upper leaflet
   set low_l "segname MEMB and resid 113 to 212"
@@ -80,7 +81,8 @@ proc align { sel {refframe 0} } {
         	set t [expr $zmax-$zmin]
 		if {[expr abs($t) > $memb_thickness]} {
 			#puts "Upper leaflet is split"
-			set split_low [atomselect top "same fragment as ($upp_l  and z < [expr -$c/2])" frame $i]
+			set split_low [atomselect top "same fragment as \
+   ($upp_l  and z < [expr -$c/2])" frame $i]
 			$split_low moveby [list 0 0 $c]
 			}
 
@@ -92,7 +94,8 @@ proc align { sel {refframe 0} } {
                 set t [expr $zmax-$zmin]
 		if {[expr abs($t) > $memb_thickness]} {
                         #puts "Lower leaflet is split"
-                        set split_low [atomselect top "same fragment as ($low_l and z > [expr $c/2])" frame $i]
+                        set split_low [atomselect top "same fragment as \
+			($low_l and z > [expr $c/2])" frame $i]
                         $split_low moveby [list 0 0 [expr -1* $c]]
                         }
 
@@ -103,14 +106,18 @@ proc align { sel {refframe 0} } {
         	foreach {xmax ymax zmax} $max { break }
         	set t [expr $zmax-$zmin]
 		if {[expr abs($t) > $memb_thickness]} {
-			#puts "Membrane is still split, but leaflets should be whole"
-			set lower_box [atomselect top "same fragment as z < 0" frame $i]
+			#puts "Membrane is still split, 
+                        #but leaflets should be whole"
+			set lower_box [atomselect top \
+   "same fragment as z < 0" frame $i]
 	                $lower_box moveby [list 0 0 $c]
 		}
 	}
 	
-	#check for anything thats not water ions or solvent outside of box and put it back if com outside the box
-	set etop [atomselect top "same segname as ((resname SDP) and z > [expr $c/2])" frame $i]
+	#check for anything thats not water ions or solvent 
+        #outside of box and put it back if com outside the box
+	set etop [atomselect top "same segname as \
+ ((resname SDP) and z > [expr $c/2])" frame $i]
         if { [$etop num] > 0} {
                 set com_top [measure center $etop]
                 if {[lindex $com_top 2] > [expr $c/2-5] } {
@@ -135,20 +142,15 @@ proc align { sel {refframe 0} } {
 	
 	$comsel update
 	set com [measure center $comsel]	
-
 	#align membrane to ref_com
 	set shift [vecsub $ref_com $com]
 	$all moveby $shift
-
 	$all update
-	
 	#center solvent around the membrane 
 	set over_pbc [atomselect top "same fragment as ((all not $sel) and z > [expr $c/2])" frame $i]
 	$over_pbc moveby [list 0 0 [expr -1*$c]]
-
 	set under_pbc [atomselect top "same fragment as ((all not $sel) and z < [expr $c/-2])" frame $i]
         $under_pbc moveby [list 0 0 $c]
-	
 	#check for anything thats not water ions or solvent outside of box and put it back if com outside the box
         set etop [atomselect top "same segname as (resname SDP) and z > [expr $c/2]" frame $i]
         if { [$etop num] > 0} {
@@ -158,17 +160,13 @@ proc align { sel {refframe 0} } {
                         $etop moveby [list 0 0 [expr -1*$c]]
                 }
         }
-
-
   }
 }
 
 #Main part 
 mol new $in_psf 
 mol addfile $in_dcd waitfor all
-
 align $memb_sel
-
 animate write dcd $out_dcd
 
 quit
