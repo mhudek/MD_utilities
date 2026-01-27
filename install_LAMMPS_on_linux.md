@@ -23,14 +23,14 @@
    mkdir build
    cd build
    ```
-6. Add this stage we need to enable the additional packages
+6. At this stage we need to enable the additional packages
    ```
    cmake -C ../cmake/presets/most.cmake ../cmake  # enable most packages
    cmake -D PKG_MC=on .                           # enable MC package, same format for other packages
    ```
 7. Time to compile, this is best done in parallel using -j flag, to find out how many cores you have run `lscpu` command
    ```
-   make - j N  #N is the number of cores to compile with
+   make -j N  #N is the number of cores to compile with
    ```
 8. Optional, copy compiled files into installation location
    ```
