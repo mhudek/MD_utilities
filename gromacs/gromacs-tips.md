@@ -1,7 +1,4 @@
 # Tips for Gromacs 
-author: Magdalena Hudek
-
-*This file will be expanded with time*
 
 ## Minimalization
 
